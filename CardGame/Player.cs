@@ -59,6 +59,5 @@ namespace CardGame
         {
             return Name;
         }
-
     }
 }

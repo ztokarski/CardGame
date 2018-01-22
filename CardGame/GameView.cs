@@ -69,9 +69,6 @@ namespace CardGame
             }
         }
 
-       
-
-
         public static void PlayerPoints(Game game, int i)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -86,6 +83,5 @@ namespace CardGame
             Console.WriteLine(game.Players[i].Name);
             Console.ResetColor();
         }
-
     }
 }

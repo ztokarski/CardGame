@@ -12,7 +12,6 @@ namespace CardGame
         {
             var gameController = new GameController();
             gameController.Run();
-
         }
     }
 }

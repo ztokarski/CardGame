@@ -31,9 +31,9 @@ namespace CardGame
 
         public void Run()
         {
-            
+
             DealOutCards();
-            
+
             Player currentPlayer = DetermineStartingPlayer();
 
             while (FirstPlayerHasCard())
@@ -50,9 +50,8 @@ namespace CardGame
                 Console.ReadLine();
 
                 GetAllDiscardedCards();
+
                 Console.Clear();
-
-
             }
 
             if (Is100PointsReached())
@@ -66,9 +65,8 @@ namespace CardGame
                 GetTable();
                 BeginNewRound();
             }
-            
-        }
 
+        }
 
         private void BeginNewGame()
         {
@@ -81,8 +79,6 @@ namespace CardGame
                 Run();
             }
         }
-
-      
 
         private void BeginNewRound()
         {
@@ -128,7 +124,7 @@ namespace CardGame
             while (playedCardCounter < game.Players.Count)
             {
 
-                if (isPlayerHuman(playerIndex))
+                if (IsPlayerHuman(playerIndex))
                 {
                     PlayingCard.ForHuman(trick, game.Players[playerIndex], currentPlayer);
                 }
@@ -145,7 +141,7 @@ namespace CardGame
             }
         }
 
-        private bool isPlayerHuman(int playerIndex)
+        private bool IsPlayerHuman(int playerIndex)
         {
             return !game.ComputerPlayers.Contains(game.Players[playerIndex]);
         }
@@ -175,8 +171,6 @@ namespace CardGame
             GameView.TrickWinner(currentPlayer, trickWinningCard);
         }
 
-        
-
         public static Card DetermineTrickWinningCard(Trick trick)
         {
             var trickWinningCard = trick.FirstCard;
@@ -204,7 +198,6 @@ namespace CardGame
             return currentPlayer;
         }
 
-
         private void GetTable()
         {
             for (int i = 0; i < game.Players.Count; i++)
@@ -226,7 +219,6 @@ namespace CardGame
             }
         }
 
-
         private void GetPlayerHand(int i)
         {
             var playerHand = game.Players[i].SortedHand();
@@ -237,12 +229,10 @@ namespace CardGame
             }
         }
 
-        
-
         private void GetPlayerTotalPoints(int i)
         {
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
-            Console.WriteLine(String.Format("Total: {0}",game.Players[i].TotalPoints));
+            Console.WriteLine(String.Format("Total: {0}", game.Players[i].TotalPoints));
             Console.ResetColor();
             Console.WriteLine("\n");
         }
@@ -254,7 +244,6 @@ namespace CardGame
             Console.ResetColor();
         }
 
-
         private void EvaluateWinner()
         {
             var roundWinner = game.Players.OrderBy(z => z.EvaluatePoints()).FirstOrDefault();
@@ -262,8 +251,6 @@ namespace CardGame
             var winner = game.Players.OrderBy(z => z.TotalPoints).FirstOrDefault();
             GameView.WinnerName(winner);
         }
-
-        
 
         private void GetPlayerName(int i)
         {

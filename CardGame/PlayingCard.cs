@@ -8,7 +8,6 @@ namespace CardGame
 {
     public class PlayingCard
     {
-
         public static void ForComputer(Trick trick, Player player, Player currentPlayer)
         {
             Card chosenComputerCard;
@@ -71,8 +70,6 @@ namespace CardGame
 
         }
 
-        
-
         private static bool HaveHigherCardInMatchingSuitNotHeartsOrSpades(Trick trick, Player player, string currentSuit)
         {
             return HaveMatchingSuit(player, currentSuit) && HighestCardInMatchingSuit(player, currentSuit).Rank > trick.FirstCard.Rank
@@ -134,7 +131,6 @@ namespace CardGame
             return player.Hand.Where(z => z.Suit == currentSuit).ToList().Count > 0;
         }
 
-
         public static void ForHuman(Trick trick, Player player, Player currentPlayer)
         {
 
@@ -185,8 +181,6 @@ namespace CardGame
 
         }
 
-        
-
         private static bool IsCardInMatchingSuitInPlayerHand(Trick trick, Player player)
         {
             return player.Hand.Where(z => z.Suit == trick.FirstCard.Suit).FirstOrDefault() != null;
@@ -209,7 +203,6 @@ namespace CardGame
             {
                 trick.FirstCard = chosenCard;
             }
-
             return askHumanForChoice;
         }
 
@@ -222,7 +215,5 @@ namespace CardGame
         {
             return Int32.TryParse(chosenNumber, out number) && (number <= player.Hand.Count());
         }
-
-       
     }
 }

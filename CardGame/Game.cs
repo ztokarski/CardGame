@@ -45,8 +45,8 @@ namespace CardGame
                 Players[i].TotalPoints += oldPoints[i];
             }
             List<Card> DrawPile = CreateCardDeck();
-            return new Game(Players, DrawPile);
 
+            return new Game(Players, DrawPile);
         }
 
         public static List<Player> CreatePlayers()
@@ -61,7 +61,6 @@ namespace CardGame
             return Players;
         }
 
-        
         public static List<Card> CreateCardDeck()
         {
             var CardSymbols = new List<string> { "A", "K", "Q", "J", "10", "9" };
