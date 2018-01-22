@@ -56,7 +56,6 @@ namespace CardGame
             switch (type)
             {
                 case "spades":
-                    Console.ForegroundColor = ConsoleColor.DarkYellow;
                     return "♠";
                 case "hearts":
                     return "♥";

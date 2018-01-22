@@ -153,7 +153,7 @@ namespace CardGame
             {
                 foreach (var card in player.Hand)
                 {
-                    if (card.Symbol == "9" && card.Suit == "♣")
+                    if (card.Symbol == "9" && card.Suit == GameView.Suit("clubs"))
                     {
                         currentPlayer = player;
                     }
@@ -247,7 +247,6 @@ namespace CardGame
         private void EvaluateWinner()
         {
             var roundWinner = game.Players.OrderBy(z => z.EvaluatePoints()).FirstOrDefault();
-
             var winner = game.Players.OrderBy(z => z.TotalPoints).FirstOrDefault();
             GameView.WinnerName(winner);
         }

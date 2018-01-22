@@ -58,6 +58,8 @@ namespace CardGame
             var Player4 = new Player("Janusz");
             var Players = new List<Player> { Player1, Player2, Player3, Player4 };
 
+            Console.Clear();
+
             return Players;
         }
 
